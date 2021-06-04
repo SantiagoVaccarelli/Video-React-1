@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    </head>
+    <title>React</title>
+    <link rel="shortcut icon" href="react.ico" />
+    <style>
+        body {
+            background: #f06d06;
+        }
+        picture{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+        }
+        picture.is-small{
+            width: 75px;
+        }
+        picture.is-large{
+            width: 125px;
+        }
+        img{
+            box-shadow: 0 0 999px #000;
+            border-radius: 50%;
+            width: 100%;
+        }
+        img.disabled{
+            opacity: 0;
+        }
+    </style>
+      <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <body>
+        <h1> Personas</h1>
+        <div id="app"></div>
+        <script type="text/babel">
+            const $app = document.getElementById("app");
+            const useState = React.useState;
+
+            const Avatar = ({id, name="😀", size}) => {
+                
+                const [enabled, setEnabled] = useState(true);  
+                const src = `https://randomuser.me/api/portraits/men/${id}.jpg`;
+                const pictureClassName = size === "small"? "is-small": (size==="large")?"is-large":"";
+                const imgClassName = enabled? "":"disabled";
+                return(
+                    <picture className={pictureClassName}>
+                        <img 
+                            onClick={()=>setEnabled(!enabled)} 
+                            className={imgClassName} 
+                            src={src}
+                        />
+                        <strong>{enabled?name:"Me fui"} </strong>
+                    </picture>
+                );
+            };  
+
+            ReactDOM.render(
+               <div>
+                    <Avatar id={1} name="Juan" size="small"/>
+                    <Avatar id={2} name="Pablo"/>
+                    <Avatar id={3} name="Manuel" size="large"/>
+                    <Avatar id={4}/>
+                </div>,
+                $app
+            );
+        </script>
+        
+    </body>
+</html>
