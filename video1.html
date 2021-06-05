@@ -1,58 +1,20 @@
 <!DOCTYPE html>
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     </head>
+
     <title>React</title>
+
     <link rel="shortcut icon" href="react.ico" />
-    <style>
-        body{
-            background-color: black;
-            color: hsl(327 100% 54%)
-        }
-        picture{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            width: 100px;
-        }
-        picture.is-small{
-            width: 75px;
-        }
-        picture.is-large{
-            width: 125px;
-        }
-        img{
-            box-shadow: 0 0 999px #000;
-            border-radius: 50%;
-            width: 100%;
-        }
-        img.disabled{
-            opacity: 0;
-        }
-        button{
-            background-color: black;
-            font-size: 4rem;
-            display: inline-block;
-            cursor: pointer;
-            text-decoration: none;
-            color:  hsl(317 100% 54%);
-            border: currentColor 0.125em solid;
-            padding: 0.25em 1em;
-            border-radius: 0.25em;
-            text-shadow:
-            0 0 0.125em hsl(0 0% 100%/0.3), 0 0 0.45em currentColor;
-            box-shadow: inset 0 0 0.25em 0 hsl(327 100% 54%), 0 0 0.25em 0 hsl(327 100% 54%);
-        }
-        span{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 70px;
-        }
-    </style>
-      <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="video1.css">
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
     <body>
         <h1> React</h1>
         <div id="app"></div>
@@ -91,7 +53,7 @@
                         </button>
 
                         <span>{contadorValue}</span>
-
+                        
                         <button onClick = {()=>{
                             contadorFuncion(contadorValue+1);
                         }}>
