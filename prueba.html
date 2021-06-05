@@ -56,15 +56,41 @@
                 );
             };  
 
+
+            function Contador(){
+                let contadorState = useState(0);
+                let contadorValue = contadorState[0];
+                let contadorFuncion = contadorState[1];
+
+                return(
+                    <div>
+                        <span>{contadorValue}</span>
+                        <button onClick = {()=>{
+                            contadorFuncion(contadorValue+1);
+                        }}>
+                        Incrementar
+                        </button>
+                        <button onClick = {()=>{
+                            contadorFuncion(contadorValue-1);
+                        }}>
+                        Decrementar
+                        </button>
+                    </div>    
+                );
+            }
+
+            
             ReactDOM.render(
                <div>
                     <Avatar id={1} name="Juan" size="small"/>
                     <Avatar id={2} name="Pablo"/>
                     <Avatar id={3} name="Manuel" size="large"/>
-                    <Avatar id={4}/>
+                    <Contador/>
                 </div>,
                 $app
             );
+            
+
         </script>
         
     </body>
