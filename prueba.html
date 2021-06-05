@@ -27,12 +27,26 @@
         img.disabled{
             opacity: 0;
         }
+        button{
+            font-size: 4rem;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--clr-neon);
+            border: var(--clr-neon)0.125em solid;
+            padding: 0.25em 1em;
+            border-radius: 0.25em;
+        }
+        span{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 70px;
+        }
     </style>
       <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
       <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
       <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <body>
-        <h1> Personas</h1>
+        <h1> React</h1>
         <div id="app"></div>
         <script type="text/babel">
             const $app = document.getElementById("app");
@@ -64,22 +78,25 @@
 
                 return(
                     <div>
-                        <span>{contadorValue}</span>
-                        <button onClick = {()=>{
-                            contadorFuncion(contadorValue+1);
-                        }}>
-                        Incrementar
-                        </button>
                         <button onClick = {()=>{
                             contadorFuncion(contadorValue-1);
                         }}>
                         Decrementar
                         </button>
+
+                        <span>{contadorValue}</span>
+
+                        <button onClick = {()=>{
+                            contadorFuncion(contadorValue+1);
+                        }}>
+                        Incrementar
+                        </button>
+                    
                     </div>    
                 );
             }
 
-            
+
             ReactDOM.render(
                <div>
                     <Avatar id={1} name="Juan" size="small"/>
