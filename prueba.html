@@ -80,9 +80,7 @@
 
 
             function Contador(){
-                let contadorState = useState(0);
-                let contadorValue = contadorState[0];
-                let contadorFuncion = contadorState[1];
+                let [contadorValue,contadorFuncion] = useState(0);
 
                 return(
                     <div>
